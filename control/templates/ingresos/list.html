@@ -1,0 +1,33 @@
+{% include 'head.html' %}
+<div class="row" style="text-align: right;">
+    <div class="col">
+        Añadir
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <table class="table mt-5">
+            <thead class="table-dark">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Descripcion</th>
+                    <th>Monto</th>
+                    <th colspan="2"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ingreso in ingresos %}
+                <tr>
+                    <td>{{ ingreso.fecha }}</td>
+                    <td>{{ ingreso.descripcion }}</td>
+                    <td>{{ ingreso.monto }}</td>
+                    <td>Editar</td>
+                    <td>Borrar</td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% include 'foot.html' %}

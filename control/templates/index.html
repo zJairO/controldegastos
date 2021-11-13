@@ -1,0 +1,46 @@
+{% include 'head.html' %}
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Descripcion</th>
+                    <th>Monto</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ingreso in ingresos %}
+                <tr>
+
+                    <td>{{ ingreso.fecha }}</td>
+                    <td>{{ ingreso.descripcion }}</td>
+                    <td>{{ ingreso.monto }}</td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Descripcion</th>
+                    <th>Monto</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for egreso in egresos %}
+                <tr>
+                    <td>{{ egreso.fecha }}</td>
+                    <td>{{ egreso.descripcion }}</td>
+                    <td>{{ egreso.monto }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% include 'foot.html' %}
