@@ -1,18 +1,18 @@
 {% include 'head.html' %}
 <div class="row" style="text-align: right;">
     <div class="col">
-        Añadir
+        <a href="{% url 'ingresos_create' %}"><button type="button" class="btn btn-primary">Nuevo Ingreso</button></a>
     </div>
 </div>
 <div class="row">
     <div class="col">
-        <table class="table mt-5">
+        <table class="table mt-3">
             <thead class="table-dark">
                 <tr>
                     <th>Fecha</th>
                     <th>Descripcion</th>
                     <th>Monto</th>
-                    <th colspan="2"></th>
+                    <th class="text-center">Accion</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,8 +21,10 @@
                     <td>{{ ingreso.fecha }}</td>
                     <td>{{ ingreso.descripcion }}</td>
                     <td>{{ ingreso.monto }}</td>
-                    <td>Editar</td>
-                    <td>Borrar</td>
+                    <td class="text-center">
+                        <a href="{% url 'ingresos_delete' ingreso.id %}"><button type="button" class="btn btn-warning" style="margin-right: 5%;">Editar</button></a>
+                        <a href="{% url 'ingresos_delete' ingreso.id %}"><button type="button" class="btn btn-danger">Eliminar</button></a>
+                    </td>
                 </tr>
 
                 {% endfor %}

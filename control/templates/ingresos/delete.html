@@ -1,0 +1,17 @@
+{% include 'head.html' %}
+{% load widget_tweaks %}
+<div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+        <form method="post">
+            {% csrf_token %}
+            Click YES to confirm
+            <input type = "submit" value="YES">
+            <a href="{% url 'ingresos' %}">Cancel</a>
+        </form>
+    </div>
+    <div class="col">
+    </div>
+</div>
+{% include 'foot.html' %}
